@@ -17,10 +17,10 @@
 			text-align: justify;
 		}
 
-		@media (min-width: 720px) {
+		@media (min-width: 820px) {
 			body {
 				margin: 5.4em 6.5em;
-				max-width: 650px;
+				max-width: 750px;
 			}
 		}
 
@@ -94,8 +94,26 @@
 
 <body>
 	<h1 role="banner">Sebastian McKimm, Regie</h1>
+
+	<select id="languageSelector">
+  		<option selected value=""></option>
+		<option value="EN">EN</option>
+  		<option value="DE">DE</option>
+	</select>
+
 	<h4> <a href="bio.html">Bio</a></h4>
-	<h4> <a href="arbeit.html">Arbeit</a></h4>
+	<div class="flex-wrapper">
+
+	<div class="box language--DE">
+		<h4> <a href="arbeit.html">Arbeit</a></h4>
+	</div>
+
+	<div class="box language--EN">
+		<h4> <a href="arbeit.html">Work</a></h4>
+	</div>
+
+	</div>
+
 
 	<h5>Contact</h5>
 	<p class="contact" role="main">
@@ -107,3 +125,36 @@
 
 
 </body></html>
+
+<script>
+
+const filters = {
+  language: "",
+};
+
+function setFilter(fieldName, fieldValue) {
+  filters[fieldName] = fieldValue;
+  const boxesEl = document.querySelectorAll('.box');
+  const filterKeys = Object.keys(filters);
+  boxesEl.forEach(el => {
+    const show = filterKeys.filter(filterKey => filters[filterKey] !== "").every(filterKey => {
+      const filterString = filterKey + "--" + filters[filterKey];
+      return el.classList.contains(filterString);
+    });
+    el.style.display = show ? 'block' : 'none';
+  });
+
+}
+
+document.getElementById('languageSelector').addEventListener('change', (e) => {
+  setFilter('language', e.target.value);
+});
+
+function selectElement(id, valueToSelect) {    
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+	element.dispatchEvent(new Event('change'))
+}
+
+selectElement('languageSelector', 'EN');
+</script>

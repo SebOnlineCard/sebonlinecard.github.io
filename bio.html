@@ -17,10 +17,10 @@
 			text-align: justify;
 		}
 
-		@media (min-width: 720px) {
+		@media (min-width: 820px) {
 			body {
 				margin: 5.4em 6.5em;
-				max-width: 650px;
+				max-width: 750px;
 			}
 		}
 
@@ -97,25 +97,67 @@
 	<h2><a href="index.html">Home</a></h2>
 	<h2><a href="arbeit.html">Arbeit</a></h2>
 
-	<h3>Bio</h3>
+	<select id="languageSelector">
+  		<option selected value="EN">EN</option>
+  		<option value="DE">DE</option>
+	</select>
+
+	<div class="flex-wrapper">
+	<div class="box language--DE">
+	<h3>Bio</h3></br>
 
 	<p class="contact" role="main">
-		Sebastian McKimm (Innsbruck, AT) ist ein irischer Theatermacher ansässig in Wien. Nach seinem Studium am
-		 Trinity College Dublin und der Universität von Cambridge wurde er von Chiara Guidi, Claudia und 
-		 Romeo Castellucci zum Regisseur und Performer ausgebildet und arbeitete unter anderem mit 
-		 Thorleifur Örn Arnarsson, Dead Centre, Barbara Frey und Gare St Lazare Ireland zusammen. 
-		 Von 2022-2025 war er Regieassistent am Burgtheater in Wien. Dort wurden 2024-2025 seine ersten 
-		 deutschsprachigen Regiearbeiten aufgeführt.
+		 Sebastian McKimm (Innsbruck, AT) ist ein irischer Theatermacher ansässig in Wien.</br>
+		 Nach seinem Studium am Trinity College Dublin und der Universität von Cambridge.</br>
+		 Wurde er von Chiara Guidi, Claudia und Romeo Castellucci zum Regisseur und Performer ausgebildet und arbeitete</br> 
+		 unter anderem mit horleifur Örn Arnarsson, Dead Centre, Barbara Frey und Gare St Lazare Ireland zusammen.</br>
+		 Von 2022-2025 war er Regieassistent am Burgtheater in Wien. Dort wurden 2024-2025 seine ersten deutschsprachigen Regiearbeiten aufgeführt.</br>
 	</p>
+	</div>
 
-	<h3>Bio</h3>
+	<div class="box language--EN">
+	<h3>Bio</h3></br>
 
 	<p class="contact" role="main">
-		Sebastian McKimm is an Irish theatre-maker and writer based in Vienna. He is a graduate of 
-		Trinity College Dublin and the University of Cambridge. He trained as a director and performer with 
-		Socìetas in Cesena [Chiara Guidi and Claudia & Romeo Castellucci]. From 2022-2025 he was 
-		Assistant Director at the Burgtheater Wien, where he worked with, among others, Thorleifur Örn Arnarsson, 
-		Barbara Frey, Dead Centre, and Jan Bosse. 
+		Sebastian McKimm is an Irish theatre-maker and writer based in Vienna. </br>
+		He is a graduate of Trinity College Dublin and the University of Cambridge. </br>
+		He trained as a director and performer with Socìetas in Cesena [Chiara Guidi and Claudia & Romeo Castellucci]. </br>
+		From 2022-2025 he was Assistant Director at the Burgtheater Wien, where he worked with, among others, Thorleifur Örn Arnarsson, Barbara Frey, Dead Centre, and Jan Bosse. </br>
 	</p>
+	</div>
+	</div>
 
 </body></html>
+
+<script>
+
+const filters = {
+  language: "",
+};
+
+function setFilter(fieldName, fieldValue) {
+  filters[fieldName] = fieldValue;
+  const boxesEl = document.querySelectorAll('.box');
+  const filterKeys = Object.keys(filters);
+  boxesEl.forEach(el => {
+    const show = filterKeys.filter(filterKey => filters[filterKey] !== "").every(filterKey => {
+      const filterString = filterKey + "--" + filters[filterKey];
+      return el.classList.contains(filterString);
+    });
+    el.style.display = show ? 'block' : 'none';
+  });
+
+}
+
+document.getElementById('languageSelector').addEventListener('change', (e) => {
+  setFilter('language', e.target.value);
+});
+
+function selectElement(id, valueToSelect) {    
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+	element.dispatchEvent(new Event('change'))
+}
+
+selectElement('languageSelector', 'EN');
+</script>
