@@ -79,7 +79,7 @@
 		}
 
 		a {
-			color: #33c;
+			color: #84e70b;
 		}
 
 		.contact {
@@ -89,18 +89,36 @@
 		.contact a {
 			color: black;
 		}
+
+		.header {
+			float: right;
+		}
+
+		h2{
+			display: inline;
+		}
+
 	</style>
 </head>
 
-<body>
-	<h1 role="banner">Sebastian McKimm, Regie</h1>
-	<h2><a href="index.html">Home</a></h2>
-	<h2><a href="bio.html">Bio</a></h2>
+ <div class="header">
+  	<select id="languageSelector">
+  		<option value="EN">EN</option>
+  		<option value="DE">DE</option>
+	</select>
+</div> 
 
-<select id="languageSelector">
-  <option selected value="EN">EN</option>
-  <option value="DE">DE</option>
-</select>
+<body>
+	<div class="box language--DE">
+		<h1 role="banner">Sebastian McKimm, Regie</h1>
+	</div>
+	<div class="box language--EN">
+		<h1 role="banner">Sebastian McKimm, Director</h1>
+	</div>
+
+	<h2><a href="index.html">Home</a></h2>
+	|
+	<h2><a href="bio.html">Bio</a></h2>
 
 	<div class="flex-wrapper">
 		<div class="box language--DE">
@@ -110,7 +128,7 @@
 				<a href="https://www.burgtheater.at/produktionen/die-kopien" > Die Kopien von Caryl Churchill </a> </br></br>
 				<b>Auserwählte Projekte</b></br>
 				[Regie] Die Kopien von Caryl Churchill, Vestibül Burgtheater, Wien. October 2025 </br>
-				[Dramaturgie] Shades Through a Shade, Gare St. Lazare Ireland  [R. Judy Hegarty-Lovett], Dublin Theatre Festival. September 2024</br>
+				[Dramaturgie] <a href="https://www.irishtimes.com/culture/stage/review/2024/09/26/shades-through-a-shade-experimental-theatre-that-pulls-itself-apart-even-as-it-transports-you/">Shades Through a Shade</a>, Gare St. Lazare Ireland  [R. Judy Hegarty-Lovett], Dublin Theatre Festival. September 2024</br>
 				[Szenische Einrichtung] Lesen und Lauschen: ODO von Dayan Kodua, Vestibül Burgtheater. Juni 2024</br>
 				[Text/Regie/Performer] On a Fly—Or, the Impossibility of Flight, A Performance Lecture. August 2021</br></br>
 				<b>Als Regieassistent am Burgtheater Wien</b></br>
@@ -128,7 +146,7 @@
 			<a href="https://www.burgtheater.at/produktionen/die-kopien" > Die Kopien von Caryl Churchill </a> </br></br>
 			<b>Selected Work</b> </br>
 			[Director] Die Kopien von Caryl Churchill, Vestibül Burgtheater, Wien. October 2025 </br>
-			[Dramaturg] Shades Through a Shade, Gare St. Lazare Ireland, Dublin Theatre Festival. September 2024</br>
+			[Dramaturg]  <a href="https://www.irishtimes.com/culture/stage/review/2024/09/26/shades-through-a-shade-experimental-theatre-that-pulls-itself-apart-even-as-it-transports-you/">Shades Through a Shade</a>, Gare St. Lazare Ireland, Dublin Theatre Festival. September 2024</br>
 			[Director & Stage] Lesen und Lauschen: ODO von Dayan Kodua, Vestibül Burgtheater. Juni 2024</br>
 			[Writer/Director/Performer] On a Fly—Or, the Impossibility of Flight, A Performance Lecture. August 2021</br></br>
 			<b>As Assistant Director at theBurgtheater Wien</b></br>
@@ -143,35 +161,4 @@
 
 </body></html>
 
-<script>
-
-const filters = {
-  language: "",
-};
-
-function setFilter(fieldName, fieldValue) {
-  filters[fieldName] = fieldValue;
-  const boxesEl = document.querySelectorAll('.box');
-  const filterKeys = Object.keys(filters);
-  boxesEl.forEach(el => {
-    const show = filterKeys.filter(filterKey => filters[filterKey] !== "").every(filterKey => {
-      const filterString = filterKey + "--" + filters[filterKey];
-      return el.classList.contains(filterString);
-    });
-    el.style.display = show ? 'block' : 'none';
-  });
-
-}
-
-document.getElementById('languageSelector').addEventListener('change', (e) => {
-  setFilter('language', e.target.value);
-});
-
-function selectElement(id, valueToSelect) {    
-    let element = document.getElementById(id);
-    element.value = valueToSelect;
-	element.dispatchEvent(new Event('change'))
-}
-
-selectElement('languageSelector', 'EN');
-</script>
+<script src="script_logic.js"></script>

@@ -79,7 +79,7 @@
 		}
 
 		a {
-			color: #33c;
+			color: #84e70b;
 		}
 
 		.contact {
@@ -89,72 +89,61 @@
 		.contact a {
 			color: black;
 		}
+
+		.header {
+			float: right;
+		}
+
+		.link_container {
+			display: inline;
+			text-align: left;
+		}
+
+		h4{
+			display: inline;
+		}
 	</style>
 </head>
 
-<body>
-	<h1 role="banner">Sebastian McKimm, Regie</h1>
-
-	<select id="languageSelector">
-  		<option selected value=""></option>
-		<option value="EN">EN</option>
+ <div class="header">
+  	<select id="languageSelector">
+  		<option value="EN">EN</option>
   		<option value="DE">DE</option>
 	</select>
+</div> 
 
-	<h4> <a href="bio.html">Bio</a></h4>
-	<div class="flex-wrapper">
-
+<body>
 	<div class="box language--DE">
-		<h4> <a href="arbeit.html">Arbeit</a></h4>
+		<h1 role="banner">Sebastian McKimm, Regie</h1>
 	</div>
-
 	<div class="box language--EN">
-		<h4> <a href="arbeit.html">Work</a></h4>
+		<h1 role="banner">Sebastian McKimm, Director</h1>
 	</div>
-
-	</div>
-
-
 	<h5>Contact</h5>
 	<p class="contact" role="main">
 		Wien, AT<br>
-		IG: <a href="https://instagram.com/officina_mckimm">@officina_mckimm</a><br>
-		Mail: <a href="mailto:kunst@sebonline.at">kunst@sebonline.at</a><br>
+		IG: <a href="https://instagram.com/officina_mckimm">@officina_mckimm</a>
+	</br>
+		Mail: <a href="mailto:sebastian@mckimm.com">sebastian@mckimm.com</a>
+	</br>
+	</br>
 	</p>
+	<div class="link_container">
+		<h4> <a href="bio.html">Bio</a></h4> |
+		<div class="box language--DE"> 
+			<h4>
+				<a href="arbeit.html">Arbeit</a>
+			</h4>
+		</div>
+		<div class="box language--EN">
+			<h4><a href="arbeit.html">Work</a>
+			</h4>
+		</div>
+	</div>
+	</div>
 
 
 
 </body></html>
 
-<script>
-
-const filters = {
-  language: "",
-};
-
-function setFilter(fieldName, fieldValue) {
-  filters[fieldName] = fieldValue;
-  const boxesEl = document.querySelectorAll('.box');
-  const filterKeys = Object.keys(filters);
-  boxesEl.forEach(el => {
-    const show = filterKeys.filter(filterKey => filters[filterKey] !== "").every(filterKey => {
-      const filterString = filterKey + "--" + filters[filterKey];
-      return el.classList.contains(filterString);
-    });
-    el.style.display = show ? 'block' : 'none';
-  });
-
-}
-
-document.getElementById('languageSelector').addEventListener('change', (e) => {
-  setFilter('language', e.target.value);
-});
-
-function selectElement(id, valueToSelect) {    
-    let element = document.getElementById(id);
-    element.value = valueToSelect;
-	element.dispatchEvent(new Event('change'))
-}
-
-selectElement('languageSelector', 'EN');
-</script>
+<script src="script_logic.js"></script>

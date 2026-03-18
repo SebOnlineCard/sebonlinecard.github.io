@@ -79,7 +79,7 @@
 		}
 
 		a {
-			color: #33c;
+			color: #84e70b;
 		}
 
 		.contact {
@@ -89,23 +89,40 @@
 		.contact a {
 			color: black;
 		}
+
+		.header {
+			float: right;
+		}
+
+		h2{
+			display: inline;
+		}
 	</style>
 </head>
 
+ <div class="header">
+  	<select id="languageSelector">
+  		<option value="EN">EN</option>
+  		<option value="DE">DE</option>
+	</select>
+</div> 
+
 <body>
-	<h1 role="banner">Sebastian McKimm, Regie</h1>
+	<div class="box language--DE">
+		<h1 role="banner">Sebastian McKimm, Regie</h1>
+	</div>
+	<div class="box language--EN">
+		<h1 role="banner">Sebastian McKimm, Director</h1>
+	</div>
+
 	<h2><a href="index.html">Home</a></h2>
+	|
 	<div class="box language--DE">
 		<h2><a href="arbeit.html">Arbeit</a></h2>
 	</div>
 	<div class="box language--EN">
 		<h2><a href="arbeit.html">Work</a></h2>
 	</div>
-
-	<select id="languageSelector">
-  		<option selected value="EN">EN</option>
-  		<option value="DE">DE</option>
-	</select>
 
 	<div class="flex-wrapper">
 	<div class="box language--DE">
@@ -134,35 +151,4 @@
 
 </body></html>
 
-<script>
-
-const filters = {
-  language: "",
-};
-
-function setFilter(fieldName, fieldValue) {
-  filters[fieldName] = fieldValue;
-  const boxesEl = document.querySelectorAll('.box');
-  const filterKeys = Object.keys(filters);
-  boxesEl.forEach(el => {
-    const show = filterKeys.filter(filterKey => filters[filterKey] !== "").every(filterKey => {
-      const filterString = filterKey + "--" + filters[filterKey];
-      return el.classList.contains(filterString);
-    });
-    el.style.display = show ? 'block' : 'none';
-  });
-
-}
-
-document.getElementById('languageSelector').addEventListener('change', (e) => {
-  setFilter('language', e.target.value);
-});
-
-function selectElement(id, valueToSelect) {    
-    let element = document.getElementById(id);
-    element.value = valueToSelect;
-	element.dispatchEvent(new Event('change'))
-}
-
-selectElement('languageSelector', 'EN');
-</script>
+<script src="script_logic.js"></script>
