@@ -1,29 +1,23 @@
-const filters = {
-  language: "",
-};
-
-function setFilter(fieldName, fieldValue) {
-  filters[fieldName] = fieldValue;
-  const boxesEl = document.querySelectorAll('.box');
-  const filterKeys = Object.keys(filters);
-  boxesEl.forEach(el => {
-    const show = filterKeys.filter(filterKey => filters[filterKey] !== "").every(filterKey => {
-      const filterString = filterKey + "--" + filters[filterKey];
-      return el.classList.contains(filterString);
-    });
-    el.style.display = show ? 'inline' : 'none';
-  });
-
+function changeLanguageEN() {    
+  var elementsEN = document.getElementsByClassName("box language--EN");
+  for(var i = 0; i < elementsEN.length; i++) {
+      elementsEN[i].style.display = 'inline'
+  }
+  var elementsDE = document.getElementsByClassName("box language--DE");
+  for(var i = 0; i < elementsDE.length; i++) {
+      elementsDE[i].style.display = 'none'
+  }
 }
 
-document.getElementById('languageSelector').addEventListener('change', (e) => {
-  setFilter('language', e.target.value);
-});
-
-function selectElement(id, valueToSelect) {    
-    let element = document.getElementById(id);
-    element.value = valueToSelect;
-	element.dispatchEvent(new Event('change'))
+function changeLanguageDE() {    
+  var elementsEN = document.getElementsByClassName("box language--EN");
+  for(var i = 0; i < elementsEN.length; i++) {
+      elementsEN[i].style.display = 'none'
+  }
+  var elementsDE = document.getElementsByClassName("box language--DE");
+  for(var i = 0; i < elementsDE.length; i++) {
+      elementsDE[i].style.display = 'inline'
+  }
 }
 
-selectElement('languageSelector', 'EN');
+changeLanguageEN();

@@ -17,10 +17,10 @@
 			text-align: justify;
 		}
 
-		@media (min-width: 820px) {
+		@media (min-width: 950px) {
 			body {
 				margin: 5.4em 6.5em;
-				max-width: 750px;
+				max-width: 850px;
 			}
 		}
 
@@ -98,14 +98,27 @@
 			display: inline;
 		}
 
+		button {
+			background-color: Transparent;
+			background-repeat:no-repeat;
+			border: none;
+			cursor:pointer;
+			overflow: hidden;
+			outline:none;
+		}
+		.button_container {
+			display: inline;
+		}
+
 	</style>
 </head>
 
  <div class="header">
-  	<select id="languageSelector">
-  		<option value="EN">EN</option>
-  		<option value="DE">DE</option>
-	</select>
+	<div class="button_container">
+	<button onclick="changeLanguageEN()">EN</button>
+	/
+	<button onclick="changeLanguageDE()">DE</button>
+	</div>
 </div> 
 
 <body>
@@ -124,37 +137,88 @@
 		<div class="box language--DE">
 			<h3>Arbeit</h3>
 			<p class="contact" role="main">
-				<b>Aktuell</b></br>
-				<a href="https://www.burgtheater.at/produktionen/die-kopien" > Die Kopien von Caryl Churchill </a> </br></br>
-				<b>Auserwählte Projekte</b></br>
-				[Regie] Die Kopien von Caryl Churchill, Vestibül Burgtheater, Wien. October 2025 </br>
-				[Dramaturgie] <a href="https://www.irishtimes.com/culture/stage/review/2024/09/26/shades-through-a-shade-experimental-theatre-that-pulls-itself-apart-even-as-it-transports-you/">Shades Through a Shade</a>, Gare St. Lazare Ireland  [R. Judy Hegarty-Lovett], Dublin Theatre Festival. September 2024</br>
-				[Szenische Einrichtung] Lesen und Lauschen: ODO von Dayan Kodua, Vestibül Burgtheater. Juni 2024</br>
-				[Text/Regie/Performer] On a Fly—Or, the Impossibility of Flight, A Performance Lecture. August 2021</br></br>
-				<b>Als Regieassistent am Burgtheater Wien</b></br>
-				2021. Alles was der Fall ist—nach Ludwig Wittgenstein [R. Dead Centre Centre] </br>
-				2022-23. Engel in Amerika [R. Daniel Kramer Kramer]; Die Eingeborenen von Maria Blut [R. Lucia Bihler Bihler]; Katharsis [R.Dead Centre]</br>
-				2023-24. Phädra in Flammen [R. Tina Lanik]; Hildensaga [R. Jan Bosse]; ]; Peer Gynt [R. Thorleifur Örn Arnarsson]; Chronik eines Mordes [R. Amos Gitai]; Orlando [R. Therese Willstedt]</br>
-				2024-25. Schachnovelle [R. Nils Strunk & Lukas Schrenk]; Der Tartuffe [R. Barbara Frey]; Wurzel Aus Sein [R. Stefan Bachmann]</br>
+				<b>Aktuell</b>
+			</br>
+			</br>
+				<a href="https://www.burgtheater.at/produktionen/die-kopien" > <b>Die Kopien</b> von Caryl Churchill </a> 
+			</br>
+			</br>
+			</br>
+				<b>Auserwählte Projekte</b>
+			</br>
+			</br>
+				[<i>Regie</i>] Die Kopien von Caryl Churchill, Vestibül Burgtheater, Wien. AT October 2025 
+			</br>
+			</br>
+				[<i>Dramaturgie</i>] <a href="https://www.irishtimes.com/culture/stage/review/2024/09/26/shades-through-a-shade-experimental-theatre-that-pulls-itself-apart-even-as-it-transports-you/">Shades Through a Shade</a>, Gare St. Lazare Ireland  [R. Judy Hegarty-Lovett], Dublin Theatre Festival. September 2024
+			</br>
+			</br>
+				[<i>Szenische Einrichtung</i>] Lesen und Lauschen: ODO von Dayan Kodua, Vestibül Burgtheater. Juni 2024
+			</br>
+			</br>
+				[<i>Text/Regie/Performer</i>] On a Fly—Or, the Impossibility of Flight, A Performance Lecture. August 2021
+			</br>
+			</br>
+			</br>
+				<b>Als Regieassistent am Burgtheater Wien</b>
+			</br>
+			</br>
+				<b>2021.</b> Alles was der Fall ist—nach Ludwig Wittgenstein [R. Dead Centre Centre] 
+			</br>
+			</br>
+				<b>2022-23.</b> Engel in Amerika [R. Daniel Kramer Kramer]; Die Eingeborenen von Maria Blut [R. Lucia Bihler Bihler]; Katharsis [R.Dead Centre]
+			</br>
+			</br>
+				<b>2023-24.</b> Phädra in Flammen [R. Tina Lanik]; Hildensaga [R. Jan Bosse]; ]; Peer Gynt [R. Thorleifur Örn Arnarsson]; Chronik eines Mordes [R. Amos Gitai]; Orlando [R. Therese Willstedt]
+			</br>
+			</br>
+				<b>2024-25.</b> Schachnovelle [R. Nils Strunk & Lukas Schrenk]; Der Tartuffe [R. Barbara Frey]; Wurzel Aus Sein [R. Stefan Bachmann]
+			</br>
+			</br>
 			</p>
 		</div>
 
 		<div class="box language--EN">
 			<h3>Work</h3>
 			<p class="contact" role="main">
-			<b>Currently Showing</b></br>
-			<a href="https://www.burgtheater.at/produktionen/die-kopien" > Die Kopien von Caryl Churchill </a> </br></br>
-			<b>Selected Work</b> </br>
-			[Director] Die Kopien von Caryl Churchill, Vestibül Burgtheater, Wien. October 2025 </br>
-			[Dramaturg]  <a href="https://www.irishtimes.com/culture/stage/review/2024/09/26/shades-through-a-shade-experimental-theatre-that-pulls-itself-apart-even-as-it-transports-you/">Shades Through a Shade</a>, Gare St. Lazare Ireland, Dublin Theatre Festival. September 2024</br>
-			[Director & Stage] Lesen und Lauschen: ODO von Dayan Kodua, Vestibül Burgtheater. Juni 2024</br>
-			[Writer/Director/Performer] On a Fly—Or, the Impossibility of Flight, A Performance Lecture. August 2021</br></br>
-			<b>As Assistant Director at the Burgtheater Wien</b></br>
-			2021.  Alles was der Fall ist—nach Ludwig Wittgenstein [Dir. Dead Centre Centre] </br>
-			2022-23. Engel in Amerika [Dir. Daniel Kramer Kramer]; Die Eingeborenen von Maria Blut [Dir. Lucia Bihler Bihler]; Katharsis [Dir. Dead Centre]</br>
-			2023-24. Phädra in Flammen [Dir. Tina Lanik]; Hildensaga [Dir. Jan Bosse]; ]; Peer Gynt [Dir. Thorleifur Örn Arnarsson]; Chronik eines Mordes [Dir. Amos Gitai]; Orlando [Dir. Therese Willstedt]</br>
-			2024-25. Schachnovelle [Dir. Nils Strunk & Lukas Schrenk]; Der Tartuffe [Dir. Barbara Frey]; Wurzel aus Sein [Dir. Stefan Bachmann]</br>
-
+			<b>Currently Showing</b>
+		</br>
+		</br>
+			<a href="https://www.burgtheater.at/produktionen/die-kopien" > <b>Die Kopien</b> von Caryl Churchill </a> 
+		</br>
+		</br>
+		</br>
+			<b>Selected Work</b> 
+		</br>
+		</br>
+			[<i>Director</i>] Die Kopien von Caryl Churchill, Vestibül Burgtheater, Wien. October 2025 
+		</br>
+		</br>
+			[<i>Dramaturg</i>]  <a href="https://www.irishtimes.com/culture/stage/review/2024/09/26/shades-through-a-shade-experimental-theatre-that-pulls-itself-apart-even-as-it-transports-you/">Shades Through a Shade</a>, Gare St. Lazare Ireland, Dublin Theatre Festival. September 2024
+		</br>
+		</br>
+			[<i>Director & Stage</i>] Lesen und Lauschen: ODO von Dayan Kodua, Vestibül Burgtheater. Juni 2024
+		</br>
+		</br>
+			[<i>Writer/Director/Performer</i>] On a Fly—Or, the Impossibility of Flight, A Performance Lecture. August 2021
+		</br>
+		</br>
+		</br>
+			<b>As Assistant Director at the Burgtheater Wien</b>
+		</br>
+		</br>
+			<b>2021.</b>  Alles was der Fall ist—nach Ludwig Wittgenstein [Dir. Dead Centre Centre] 
+		</br>
+		</br>
+			<b>2022-23.</b> Engel in Amerika [Dir. Daniel Kramer Kramer]; Die Eingeborenen von Maria Blut [Dir. Lucia Bihler Bihler]; Katharsis [Dir. Dead Centre]
+		</br>
+		</br>
+			<b>2023-24.</b> Phädra in Flammen [Dir. Tina Lanik]; Hildensaga [Dir. Jan Bosse]; ]; Peer Gynt [Dir. Thorleifur Örn Arnarsson]; Chronik eines Mordes [Dir. Amos Gitai]; Orlando [Dir. Therese Willstedt]
+		</br>
+		</br>
+			<b>2024-25.</b> Schachnovelle [Dir. Nils Strunk & Lukas Schrenk]; Der Tartuffe [Dir. Barbara Frey]; Wurzel aus Sein [Dir. Stefan Bachmann]
+		</br>
+		</br>
 			</p>
 		</div>
 	</div>

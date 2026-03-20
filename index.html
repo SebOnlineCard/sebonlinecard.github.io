@@ -17,10 +17,10 @@
 			text-align: justify;
 		}
 
-		@media (min-width: 820px) {
+		@media (min-width: 75%) {
 			body {
 				margin: 5.4em 6.5em;
-				max-width: 750px;
+				max-width: 70%;
 			}
 		}
 
@@ -102,14 +102,27 @@
 		h4{
 			display: inline;
 		}
+
+		button {
+			background-color: Transparent;
+			background-repeat:no-repeat;
+			border: none;
+			cursor:pointer;
+			overflow: hidden;
+			outline:none;
+		}
+		.button_container {
+			display: inline;
+		}
 	</style>
 </head>
 
  <div class="header">
-  	<select id="languageSelector">
-  		<option value="EN">EN</option>
-  		<option value="DE">DE</option>
-	</select>
+	<div class="button_container">
+	<button onclick="changeLanguageEN()">EN</button>
+	/
+	<button onclick="changeLanguageDE()">DE</button>
+	</div>
 </div> 
 
 <body>
@@ -119,15 +132,6 @@
 	<div class="box language--EN">
 		<h1 role="banner">Sebastian McKimm, Director</h1>
 	</div>
-	<h5>Contact</h5>
-	<p class="contact" role="main">
-		Wien, AT<br>
-		IG: <a href="https://instagram.com/officina_mckimm">@officina_mckimm</a>
-	</br>
-		Mail: <a href="mailto:sebastian@mckimm.com">sebastian@mckimm.com</a>
-	</br>
-	</br>
-	</p>
 	<div class="link_container">
 		<h4> <a href="bio.html">Bio</a></h4> |
 		<div class="box language--DE"> 
@@ -140,6 +144,15 @@
 			</h4>
 		</div>
 	</div>
+
+	<p class="contact" role="main">
+		Wien, AT<br>
+		IG: <a href="https://instagram.com/officina_mckimm">@officina_mckimm</a>
+	</br>
+		Mail: <a href="mailto:sebastian@mckimm.com">sebastian@mckimm.com</a>
+	</br>
+	</br>
+	</p>
 	</div>
 
 
