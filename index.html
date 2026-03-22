@@ -82,6 +82,10 @@
 			color: #84e70b;
 		}
 
+		.norm {
+			color: #444;
+		}
+
 		.contact {
 			font-size: 0.9em;
 		}
@@ -114,39 +118,23 @@
 		.button_container {
 			display: inline;
 		}
-
-		.language--DE {
-			display: none;
-		}
 	</style>
 </head>
 
  <div class="header">
 	<div class="button_container">
-	<button onclick="changeLanguageEN()">EN</button>
+	<a class = "norm">EN</a>
 	/
-	<button onclick="changeLanguageDE()">DE</button>
+	<a href="index_de.html" class="norm">DE</a>
 	</div>
 </div> 
 </br>
 <body>
-	<div class="box language--DE">
-		<h1 role="banner">Sebastian McKimm, Regie</h1>
-	</div>
 	<div class="box language--EN">
 		<h1 role="banner">Sebastian McKimm, Director</h1>
 	</div>
 	<div class="link_container">
-		<h4> <a href="bio.html">Bio</a></h4> |
-		<div class="box language--DE"> 
-			<h4>
-				<a href="arbeit.html">Arbeit</a>
-			</h4>
-		</div>
-		<div class="box language--EN">
-			<h4><a href="arbeit.html">Work</a>
-			</h4>
-		</div>
+		<h4> <a href="bio_en.html">Bio</a></h4> | <h4><a href="work.html">Work</a></h4>
 	</div>
 
 	<p class="contact" role="main">
@@ -162,5 +150,3 @@
 
 
 </body></html>
-
-<script src="script_logic.js"></script>
