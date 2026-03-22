@@ -7,6 +7,8 @@ function changeLanguageEN() {
   for(var i = 0; i < elementsDE.length; i++) {
       elementsDE[i].style.display = 'none'
   }
+
+  varLanguageIsEnglish = true;
 }
 
 function changeLanguageDE() {    
@@ -20,4 +22,19 @@ function changeLanguageDE() {
   }
 }
 
-changeLanguageEN();
+function toggleLanguage() {    
+  if(varLanguageIsEnglish)
+  {
+    changeLanguageEN();
+    varLanguageIsEnglish = true;
+  }
+else
+    {
+        changeLanguageDE();
+        varLanguageIsEnglish = false;
+    }
+}
+
+
+var varLanguageIsEnglish;
+toggleLanguage();
